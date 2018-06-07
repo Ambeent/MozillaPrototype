@@ -1,0 +1,137 @@
+<resources tools:ignore="ExtraTranslation"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+    <string name="app_name">Mozilla Prototype</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- most important string here. If a message has this as a receiver, then it is a group message -->
+    <string name="message_with_no_receiver">null</string>
+
+    <!-- General purpose strings -->
+    <string name="accept">Accept</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Hotspot connection dialog box strings -->
+    <string name="detected_hotspots">Select hotspot to connect</string>
+    <string name="toast_connecting">Connecting to %1$s&#8230;</string>
+    <string name="toast_already_connected">You are already connected here</string>
+
+    <string name="toast_cannot_scan">Cannot scan when hotspot is activated</string>
+    <string name="toast_wifi_disabled">Cannot scan when WiFi is disabled</string>
+
+    <!-- Strings related to location permission -->
+    <string name="title_location_permission">Location permission</string>
+    <string name="text_location_permission">The app requires location permission in order to access WiFi settings</string>
+
+
+    <!-- Strings related hints -->
+    <string name="message_to">To: %1$s</string>
+    <string name="message_from">From: %1$s</string>
+
+
+    <!-- Strings related hints -->
+    <string name="hint_type_message">Type a message</string>
+    <string name="hint_nickname">Anonymous</string>
+
+    <!-- Strings related to alert dialogs -->
+    <string name="alert_title_nickname">Please Enter Your Nickname</string>
+    <string name="alert_message_nickname">Anonymous</string>
+    <string name="alert_title_permission">Location permission</string>
+    <string name="alert_message_permission">Android requires location permission in order to scan nearby WiFis.</string>
+    <string name="alert_host_warning">Do you want to become a host of %1$s Wifi?</string>
+
+    <string name="alert_channel_warning">Changing channel to %1$s.</string>
+    <string name="alert_host_success">"Now you are host of %1$s Wifi."</string>
+    <string name="alert_channel_success">"Channel has been changed."</string>
+
+    <!-- Strings related to spinners -->
+    <string name="toast_hotspot_warning">You are not connected to a HotSpot</string>
+
+    <!-- Strings related to RouterInfoActivity -->
+    <string name="router_channel">%1$d</string>
+    <string name="router_mac_address">MAC Address:&#160; </string>
+    <string name="router_title_mac_address"><u>MAC Address</u></string>
+    <string name="router_title_ip_address"><u>IP Address</u></string>
+    <string name="router_rssi">RSSI:&#160; </string>
+    <string name="router_not_connected_here">You are not connected to here.</string>
+    <string name="router_connected_device_number">%1$d Connected Devices </string>
+    <string name="router_connected_device_invalid">You are not connected to this WiFi </string>
+    <string name="conn_dev_users_ip">%1$s (You) </string>
+    <string name="rssi_insane">%1$s -> Insane! </string>
+    <string name="rssi_verygood">%1$s -> Very good </string>
+    <string name="rssi_good">%1$s -> Good </string>
+    <string name="rssi_okay">%1$s -> Okay </string>
+    <string name="rssi_poor">%1$s -> Poor </string>
+    <string name="rssi_verypoor">%1$s -> Very Poor </string>
+    <string name="rssi_unusable">%1$s -> Unusable </string>
+
+    <!--Landing Activity strings -->
+    <string name="logo_ambeent">Ambeent</string>
+    <string name="button_login">Log in</string>
+
+    <!--Target Address strings -->
+    <string name="north_address">North: %1$s</string>
+    <string name="south_address">South: %1$s </string>
+    <string name="east_address">East: %1$s </string>
+    <string name="west_address">West: %1$s </string>
+    <string name="north">North: -</string>
+    <string name="south">South: - </string>
+    <string name="east">East: - </string>
+    <string name="west">West: - </string>
+    <!-- -->
+    <string name="title_ambeent_mini">Ambeent Mini</string>
+    <string name="not_connected">Not Connected</string>
+    <string name="channel">Channel </string>
+    <string name="anonymous">Anonymous </string>
+    <string name="toast_not_connected">Your are not connected to a wifi</string>
+    <string name="title_activity_scaling">scalingActivity</string>
+
+    <string name="backend_optimization_address">https://ambeent.ml:5000/optimization</string>
+    <string name="backend_new_minista_address">https://ambeent.ml:5100/MiniSta/%1$s</string>
+
+    <!-- Strings related to LoginActivity -->
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="login_password_repeat">Password Repeat</string>
+    <string name="action_sign_in">Sign In</string>
+    <string name="action_sign_up">Sign Up</string>
+    <string name="auth_failed">Authentication failed</string>
+
+    <string name="becoming_host">Becoming Host</string>
+    <string name="becoming_host_progress">Becoming Host&#8230;</string>
+    <string name="choose_brand_model">Please choose your router’s brand and model.</string>
+    <string name="host_warning">This process may take a minute. Are you sure you want to be host of this access point?</string>
+    <string name="gateway_credentials">Gateway Credentials</string>
+    <string name="gateway_explaination">Please enter your gateway password.</string>
+    <string name="gateway_explaination_with_name">Please enter your gateway username and password.</string>
+    <string name="hint_username">Username</string>
+
+    <!-- Facebook API strings-->
+    <string name="facebook_app_id">1948584695361239</string>
+    <string name="fb_login_protocol_scheme">fb1948584695361239</string>
+
+    <string name="map_style_json">[
+  {
+    "featureType": "all",
+    "stylers": [
+      { "color": "#C0C0C0" }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      { "color": "#CCFFFF" }
+    ]
+  },{
+    "featureType": "landscape",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+]</string>
+
+</resources>

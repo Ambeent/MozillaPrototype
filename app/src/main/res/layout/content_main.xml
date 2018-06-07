@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <com.wireless.ambeent.mozillaprototype.customviews.CustomRecyclerView
+        android:id="@+id/recyclerView_Chat"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/view_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/colorDarkGray"
+        app:layout_constraintBottom_toTopOf="@+id/cardView_MessageContainer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardView_MessageContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <com.wireless.ambeent.mozillaprototype.customviews.EditTextV2
+                android:id="@+id/editText_Message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="top|start"
+                android:hint="@string/hint_type_message"
+                android:inputType="textMultiLine|textCapSentences" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+    <ImageButton
+        android:id="@+id/imageButton_SendMessage"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        android:tint="@color/colorGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cardView_MessageContainer"
+        app:srcCompat="@drawable/ic_send_message" />
+
+</android.support.constraint.ConstraintLayout>
