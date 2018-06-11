@@ -21,6 +21,10 @@ import com.hbb20.CountryCodePicker;
 import com.wireless.ambeent.mozillaprototype.R;
 import com.wireless.ambeent.mozillaprototype.helpers.Constants;
 
+/**
+ * Created by Ambeent Wireless.
+ */
+
 public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";

@@ -5,11 +5,9 @@ import android.util.AttributeSet;
 import android.view.KeyEvent;
 
 /**
- * Created by Atakan on 27.09.2017.
+ * Created by Ambeent Wireless.
  * Standard EditText with one extra feature. It loses focus on "back pressed"
  */
-
-
 
 public class EditTextV2 extends android.support.v7.widget.AppCompatEditText
 {

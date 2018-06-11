@@ -16,7 +16,9 @@ import com.wireless.ambeent.mozillaprototype.R;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 public class WifiScanner extends BroadcastReceiver {
 
     private static final String TAG = "WifiScanner";

@@ -1,5 +1,7 @@
 package com.wireless.ambeent.mozillaprototype.pojos;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 //Same as the message object. This object is used to fetch and upload messages on one go
 public class FirebaseMessageObject {
 

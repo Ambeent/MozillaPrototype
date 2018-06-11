@@ -19,7 +19,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 //This class is responsible for creating and disabling hotspots, scanning and detecting the hotspots that are created by the application.
 public class WifiApController {
 

@@ -24,7 +24,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Atakan on 6.12.2017.
+ * Created by Ambeent Wireless.
  */
 
 public class WifiPinger {

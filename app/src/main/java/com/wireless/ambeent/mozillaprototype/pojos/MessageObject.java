@@ -3,7 +3,9 @@ package com.wireless.ambeent.mozillaprototype.pojos;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Objects;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 public class MessageObject {
 
     @SerializedName("id")

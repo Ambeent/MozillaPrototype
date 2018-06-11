@@ -19,7 +19,9 @@ import com.wireless.ambeent.mozillaprototype.pojos.MessageObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 public class FirebaseDatabaseHelper {
 
     private static final String TAG = "FirebaseDatabaseHelper";

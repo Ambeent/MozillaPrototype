@@ -3,9 +3,8 @@ package com.wireless.ambeent.mozillaprototype.pojos;
 import java.util.Objects;
 
 /**
- * Created by Atakan on 7.12.2017.
+ * Created by Ambeent Wireless.
  */
-
 public class ConnectedDeviceObject {
 
     private String macAddress;

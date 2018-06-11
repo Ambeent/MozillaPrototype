@@ -10,7 +10,7 @@ import android.widget.FrameLayout;
 
 
 /**
- * Created by Atakan on 21.11.2017.
+ * Created by Ambeent Wireless.
  * This class is needed to get the touch events of map (like swipe direction)
  */
 

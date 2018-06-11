@@ -30,7 +30,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.wireless.ambeent.mozillaprototype.server.ServerController.postRequest;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 public class ChatHandler {
 
     private static final String TAG = "ChatHandler";

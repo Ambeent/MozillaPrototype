@@ -13,7 +13,7 @@ import com.wireless.ambeent.mozillaprototype.pojos.MessageObject;
 import java.util.ArrayList;
 
 /**
- * Created by Atakan on 13.07.2017.
+ * Created by Ambeent Wireless.
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {

@@ -7,11 +7,11 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
 
+
 /**
- * Created by Atakan on 21.11.2017.
+ * Created by Ambeent Wireless.
  * This is a version of recyclerview which ignores
  */
-
 public class CustomRecyclerView extends RecyclerView {
 
     private static final String TAG = "CustomRecyclerView";

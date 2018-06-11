@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.SupportMapFragment;
 
 /**
- * Created by Atakan on 30.10.2017.
+ * Created by Ambeent Wireless.
  */
 
 public class CustomSupportMapFragment extends SupportMapFragment {

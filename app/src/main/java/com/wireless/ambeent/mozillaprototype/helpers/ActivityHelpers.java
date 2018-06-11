@@ -27,13 +27,7 @@ import java.util.List;
 
 
 /**
- * Created by Atakan on 8.05.2017.
- * A class to contain all kinds of helper methods to be used in Activities and Fragments.
- * Content: Getting mac address method for Android version 6.0+.
- *          Getting external IP address.
- *          Calculating channel of access point from frequency.
- *
- *
+ * Created by Ambeent Wireless.
  */
 
 public class ActivityHelpers {

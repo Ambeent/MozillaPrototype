@@ -14,7 +14,9 @@ import com.wireless.ambeent.mozillaprototype.helpers.Constants;
 import com.wireless.ambeent.mozillaprototype.pojos.MessageObject;
 
 import java.util.List;
-
+/**
+ * Created by Ambeent Wireless.
+ */
 public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.MyViewHolder>{
 
     private static final String TAG = "ChatAdapter";
