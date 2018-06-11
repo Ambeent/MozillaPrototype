@@ -3,7 +3,7 @@
 
 
 
-    <string name="app_name">Mozilla Prototype</string>
+    <string name="app_name">Ambeent PI</string>
     <string name="action_settings">Settings</string>
 
     <!-- most important string here. If a message has this as a receiver, then it is a group message -->
