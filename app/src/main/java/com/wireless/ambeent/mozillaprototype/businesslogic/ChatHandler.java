@@ -103,7 +103,7 @@ public class ChatHandler {
 
             Log.i(TAG, "postMessagesToNetwork: Sending message to: " + connectedDeviceObject.getIpAddress());
 
-            Toast.makeText(mContext, "Posting " +outgoingMessageList.size() + " messages to " +connectedDeviceObject.getIpAddress(), Toast.LENGTH_SHORT).show();
+      //      Toast.makeText(mContext, "Posting " +outgoingMessageList.size() + " messages to " +connectedDeviceObject.getIpAddress(), Toast.LENGTH_SHORT).show();
 
 
             String ipAddress = "http://" + connectedDeviceObject.getIpAddress() + ":8000/";
@@ -117,7 +117,7 @@ public class ChatHandler {
     //Send the given message list to a target ip address in the network
     private void postMessagesToTarget(ArrayList<MessageObject> outgoingMessageList, String ipAddress) {
 
-        Toast.makeText(mContext, "Posting " +outgoingMessageList.size() + " messages to " +ipAddress, Toast.LENGTH_SHORT).show();
+    //    Toast.makeText(mContext, "Posting " +outgoingMessageList.size() + " messages to " +ipAddress, Toast.LENGTH_SHORT).show();
 
         String fullAddress = "http://" + ipAddress + ":8000/";
         IRest taskService = RetrofitRequester.createService(IRest.class, fullAddress);

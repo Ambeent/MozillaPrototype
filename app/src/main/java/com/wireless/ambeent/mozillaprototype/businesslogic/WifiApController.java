@@ -78,7 +78,7 @@ public class WifiApController {
             @Override
             public void run() {
                 if(mWifiApManager.isWifiApEnabled() || isConnectedToAmbeentMozillaHotspot()){
-                    Toast.makeText(mContext, "Detected " + mConnDevObjList.size() + " other connected devices", Toast.LENGTH_SHORT).show();
+               //     Toast.makeText(mContext, "Detected " + mConnDevObjList.size() + " other connected devices", Toast.LENGTH_SHORT).show();
                     updateClientList();
                     //mWifiPinger.startScanning();
                 } else mConnDevObjList.clear();
