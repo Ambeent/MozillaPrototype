@@ -216,6 +216,9 @@ public class ChatHandler {
         //Get senders phone number from SharedPreferences
         String sender = Constants.PHONE_NUMBER;
 
+        //Get senders current nickname
+        String senderNickname = Constants.NICKNAME;
+
         //Create a placeholder receiver string. If it stays the same, then it is a group message
         String receiver = mContext.getResources().getString(R.string.message_with_no_receiver);
 
@@ -238,7 +241,7 @@ public class ChatHandler {
 
         long timestamp = ActivityHelpers.getCurrentTimeSeconds();
 
-        MessageObject messageObject = new MessageObject(randomUUID, actualMessage, sender, receiver, timestamp);
+        MessageObject messageObject = new MessageObject(randomUUID, actualMessage, sender, senderNickname, receiver, timestamp);
 
         //    Log.i(TAG, "createMessageObject: " +messageObject.toString());
 

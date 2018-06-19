@@ -23,7 +23,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper dbInstance;
 
     // Database Version. Increment this manually when database schema changes.
-    private static final int DATABASE_VERSION = 8;
+    private static final int DATABASE_VERSION = 10;
 
     // Database Name
     private static final String DATABASE_NAME = "MozillaProMessenger";
@@ -36,6 +36,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String KEY_MESSAGE_ID = "messageId";
     public static final String KEY_MESSAGE = "message";
     public static final String KEY_SENDER = "sender";
+    public static final String KEY_SENDER_NICKNAME = "sender_nickname";
     public static final String KEY_RECEIVER = "receiver";
     public static final String KEY_MSG_TIMESTAMP = "msg_timestmap";
 
@@ -45,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             KEY_MESSAGE_ID + " TEXT, "+
             KEY_MESSAGE + " TEXT, "+
             KEY_SENDER + " TEXT, " +
+            KEY_SENDER_NICKNAME + " TEXT, " +
             KEY_RECEIVER + " TEXT, " +
             KEY_MSG_TIMESTAMP +" REAL);";
 
@@ -95,6 +97,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {DatabaseHelper.KEY_MESSAGE_ID,
                 DatabaseHelper.KEY_MESSAGE,
                 DatabaseHelper.KEY_SENDER,
+                DatabaseHelper.KEY_SENDER_NICKNAME,
                 DatabaseHelper.KEY_RECEIVER,
                 DatabaseHelper.KEY_MSG_TIMESTAMP};
 
@@ -107,10 +110,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String messageId = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_MESSAGE_ID));
             String message = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_MESSAGE));
             String sender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_SENDER));
+            String senderNickname = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_SENDER_NICKNAME));
             String receiver = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_RECEIVER));
             long timestamp = cursor.getLong(cursor.getColumnIndex(DatabaseHelper.KEY_MSG_TIMESTAMP));
 
-            MessageObject messageObject = new MessageObject(messageId, message, sender, receiver, timestamp);
+            MessageObject messageObject = new MessageObject(messageId, message, sender, senderNickname, receiver, timestamp);
 
             return messageObject;
         }
@@ -131,6 +135,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {DatabaseHelper.KEY_MESSAGE_ID,
                 DatabaseHelper.KEY_MESSAGE,
                 DatabaseHelper.KEY_SENDER,
+                DatabaseHelper.KEY_SENDER_NICKNAME,
                 DatabaseHelper.KEY_RECEIVER,
                 DatabaseHelper.KEY_MSG_TIMESTAMP};
 
@@ -144,10 +149,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String messageId = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_MESSAGE_ID));
             String message = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_MESSAGE));
             String sender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_SENDER));
+            String senderNickname = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_SENDER_NICKNAME));
             String receiver = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_RECEIVER));
             long timestamp = cursor.getLong(cursor.getColumnIndex(DatabaseHelper.KEY_MSG_TIMESTAMP));
 
-            MessageObject messageObject = new MessageObject(messageId, message, sender, receiver, timestamp);
+            MessageObject messageObject = new MessageObject(messageId, message, sender, senderNickname, receiver, timestamp);
 
             messages.add(messageObject);
         }
@@ -165,6 +171,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String[] columns = {DatabaseHelper.KEY_MESSAGE_ID,
                 DatabaseHelper.KEY_MESSAGE,
                 DatabaseHelper.KEY_SENDER,
+                DatabaseHelper.KEY_SENDER_NICKNAME,
                 DatabaseHelper.KEY_RECEIVER,
                 DatabaseHelper.KEY_MSG_TIMESTAMP};
 
@@ -182,10 +189,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String messageId = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_MESSAGE_ID));
             String message = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_MESSAGE));
             String sender = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_SENDER));
+            String senderNickname = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_SENDER_NICKNAME));
             String receiver = cursor.getString(cursor.getColumnIndex(DatabaseHelper.KEY_RECEIVER));
             long timestamp = cursor.getLong(cursor.getColumnIndex(DatabaseHelper.KEY_MSG_TIMESTAMP));
 
-            MessageObject messageObject = new MessageObject(messageId, message, sender, receiver, timestamp);
+            MessageObject messageObject = new MessageObject(messageId, message, sender, senderNickname, receiver, timestamp);
 
             messages.add(messageObject);
         }
@@ -219,7 +227,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(DatabaseHelper.KEY_MESSAGE_ID, messageObject.getId());
         values.put(DatabaseHelper.KEY_MESSAGE, messageObject.getMessage());
         values.put(DatabaseHelper.KEY_SENDER, messageObject.getSender());
+        values.put(DatabaseHelper.KEY_SENDER_NICKNAME, messageObject.getSenderNickname());
         values.put(DatabaseHelper.KEY_RECEIVER, messageObject.getReceiver());
+        values.put(DatabaseHelper.KEY_MSG_TIMESTAMP, messageObject.getTimestamp());
 
         DatabaseHelper.getInstance(mContext)
                 .getWritableDatabase()

@@ -47,6 +47,7 @@ public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.MyViewHolder>
 
         MessageObject messageObject = mMessageObjectList.get(position);
         String sender = messageObject.getSender();
+        String senderNickname = messageObject.getSenderNickname();
         String message = messageObject.getMessage();
 
         String receiver = messageObject.getReceiver();
@@ -55,7 +56,7 @@ public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.MyViewHolder>
             //The user is the receiver. So the user receives a private message
             holder.senderContainerCardView.setVisibility(View.VISIBLE);
             holder.senderContainerCardView.setCardBackgroundColor(ContextCompat.getColor(mContext, R.color.colorLightGray));
-            holder.senderNameTextView.setText(sender);
+            holder.senderNicknameTextView.setText(senderNickname);
             holder.senderMessageTextView.setText(message);
 
             holder.ownerContainerCardView.setVisibility(View.GONE);
@@ -81,7 +82,7 @@ public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.MyViewHolder>
             //The user received a regular group message
             holder.senderContainerCardView.setVisibility(View.VISIBLE);
             holder.senderContainerCardView.setCardBackgroundColor(ContextCompat.getColor(mContext, R.color.colorWhite));
-            holder.senderNameTextView.setText(sender);
+            holder.senderNicknameTextView.setText(senderNickname);
             holder.senderMessageTextView.setText(message);
 
             holder.ownerContainerCardView.setVisibility(View.GONE);
@@ -99,7 +100,7 @@ public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.MyViewHolder>
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        public TextView senderNameTextView, senderMessageTextView, ownerMessageTextView, ownerTargetTextView;
+        public TextView senderNicknameTextView, senderMessageTextView, ownerMessageTextView, ownerTargetTextView;
 
         public CardView senderContainerCardView, ownerContainerCardView;
 
@@ -107,7 +108,7 @@ public class ChatAdapter  extends RecyclerView.Adapter<ChatAdapter.MyViewHolder>
         public MyViewHolder(View view) {
             super(view);
 
-            senderNameTextView = (TextView) view.findViewById(R.id.textView_SenderName);
+            senderNicknameTextView = (TextView) view.findViewById(R.id.textView_SenderName);
             senderMessageTextView = (TextView) view.findViewById(R.id.textView_SenderMessage);
             ownerMessageTextView = (TextView) view.findViewById(R.id.textView_OwnerMessage);
             ownerTargetTextView = (TextView) view.findViewById(R.id.textView_OwnerTarget);

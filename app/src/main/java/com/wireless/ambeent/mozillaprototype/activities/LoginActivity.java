@@ -95,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 //Valid number, save it with plus sign
                 sharedPreferences.edit().putString(Constants.USER_PHONE_NUMBER, mCcp.getFullNumberWithPlus()).apply();
+                sharedPreferences.edit().putString(Constants.CURRENT_USER_USERNAME, mCcp.getFullNumberWithPlus()).apply();
 
                 Log.i(TAG, "Entered Number: " + mCcp.getFullNumberWithPlus());
 

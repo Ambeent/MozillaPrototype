@@ -17,23 +17,28 @@ public class MessageObject {
     @SerializedName("sender")
     private String sender;
 
+    @SerializedName("senderNickname")
+    private String senderNickname;
+
     @SerializedName("receiver")
     private String receiver;
 
     @SerializedName("timestamp")
     private long timestamp;
 
-    public MessageObject(String id, String message, String sender, long timestamp) {
+   /* public MessageObject(String id, String message, String sender, String senderNickname, long timestamp) {
         this.id = id;
         this.message = message;
         this.sender = sender;
+        this.senderNickname = senderNickname;
         this.timestamp = timestamp;
-    }
+    }*/
 
-    public MessageObject(String id, String message, String sender, String receiver, long timestamp) {
+    public MessageObject(String id, String message, String sender, String senderNickname, String receiver, long timestamp) {
         this.id = id;
         this.message = message;
         this.sender = sender;
+        this.senderNickname = senderNickname;
         this.receiver = receiver;
         this.timestamp = timestamp;
     }
@@ -62,6 +67,14 @@ public class MessageObject {
         this.sender = sender;
     }
 
+    public String getSenderNickname() {
+        return senderNickname;
+    }
+
+    public void setSenderNickname(String senderNickname) {
+        this.senderNickname = senderNickname;
+    }
+
     public String getReceiver() {
         return receiver;
     }
@@ -78,12 +91,15 @@ public class MessageObject {
         this.timestamp = timestamp;
     }
 
+
+
     @Override
     public String toString() {
         return "MessageObject{" +
                 "id='" + id + '\'' +
                 ", message='" + message + '\'' +
                 ", sender='" + sender + '\'' +
+                ", senderNickname='" + senderNickname + '\'' +
                 ", receiver='" + receiver + '\'' +
                 '}';
     }

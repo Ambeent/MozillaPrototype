@@ -73,6 +73,7 @@ public class FirebaseDatabaseHelper {
         String id = messageObject.getId();
         String message = messageObject.getMessage();
         String sender = messageObject.getSender();
+        String senderNickname = messageObject.getSenderNickname();
         String receiver = messageObject.getReceiver();
         long timestamp = messageObject.getTimestamp();
 
@@ -82,6 +83,7 @@ public class FirebaseDatabaseHelper {
         Map<String,Object> taskMap = new HashMap<String,Object>();
         taskMap.put("message", message);
         taskMap.put("sender", sender);
+        taskMap.put("senderNickname", senderNickname);
         taskMap.put("receiver", receiver);
         taskMap.put("timestamp", timestamp);
 
@@ -168,10 +170,11 @@ public class FirebaseDatabaseHelper {
                 String id = dataSnapshot.getKey();
                 String message = dataSnapshot.child("message").getValue(String.class);
                 String sender = dataSnapshot.child("sender").getValue(String.class);
+                String senderNickname = dataSnapshot.child("senderNickname").getValue(String.class);
                 String receiver = dataSnapshot.child("receiver").getValue(String.class);
                 long timestamp = dataSnapshot.child("timestamp").getValue(long.class);
 
-                MessageObject receivedMessage = new MessageObject(id, message, sender, receiver, timestamp);
+                MessageObject receivedMessage = new MessageObject(id, message, sender, senderNickname, receiver, timestamp);
 
                 //Insert message to local database
                 boolean isNewMessage = DatabaseHelper.insertMessageToSQLite(context, receivedMessage);

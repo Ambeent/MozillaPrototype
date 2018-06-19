@@ -20,9 +20,11 @@ public class Constants {
     //The timestamp of the last message sync with Firebase
     public static final String LAST_SYNC_TIMESTAMP = "Last_Sync_Timestamp";
 
+    public static final String CURRENT_USER_USERNAME = "Current_User_Username";
 
     //Used for global access in app. Initialized in MainActivity
     public static String PHONE_NUMBER;
+    public static String NICKNAME;
 
 
 }

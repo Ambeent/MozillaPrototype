@@ -1,5 +1,6 @@
 package com.wireless.ambeent.mozillaprototype.activities;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -12,10 +13,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -80,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
     //The switch view that controls hotspot
     private SwitchCompat mSwitchCompat;
 
+    //SharedPreferences...
+    private SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,8 +105,12 @@ public class MainActivity extends AppCompatActivity {
     private void activityInitialization() {
 
         //Set up the PHONE_NUMBER for globall access
-        SharedPreferences sharedPreferences = getSharedPreferences(Constants.SHARED_PREF, MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(Constants.SHARED_PREF, MODE_PRIVATE);
         Constants.PHONE_NUMBER = sharedPreferences.getString(Constants.USER_PHONE_NUMBER, "");
+
+        //Show the saved user nickname.
+        Constants.NICKNAME = sharedPreferences.getString(Constants.CURRENT_USER_USERNAME, Constants.PHONE_NUMBER);
+        ((TextView)ButterKnife.findById(this, R.id.textView_Nickname)).setText(Constants.NICKNAME);
         Log.i(TAG, "onCreate: PHONE NUMBER: " + Constants.PHONE_NUMBER);
 
 
@@ -283,6 +294,53 @@ public class MainActivity extends AppCompatActivity {
         showScannedHotspotDialogBox();
     }
 
+    //Opens a dialog box to edit the nickname.
+    @OnClick(R.id.textView_Nickname)
+    public void changeNickname() {
+
+        final TextView nicknameTextView = ButterKnife.findById(this, R.id.textView_Nickname);
+
+        //Edittext with 18 character limit.
+        final EditText editText = new EditText(this);
+        editText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(18)});
+
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle(R.string.alert_title_nickname);
+        alert.setView(editText);
+
+        alert.setPositiveButton(R.string.accept, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                if (editText.getText().toString().length() == 0) {
+                    nicknameTextView.setText(Constants.PHONE_NUMBER);
+                } else nicknameTextView.setText(editText.getText().toString());
+
+                //Save nickname to sharedpreferences
+                sharedPreferences.edit().putString(Constants.CURRENT_USER_USERNAME, nicknameTextView.getText().toString()).apply();
+                Constants.NICKNAME =  String.valueOf(nicknameTextView.getText());
+
+            }
+        });
+
+        alert.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+        alert.show();
+
+        //Force show the keyboard. Since textview takes focus first and closes
+        // the keyboard, we must try to show keyboard after a short delay.
+        mHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                editText.requestFocus();
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(editText, InputMethodManager.SHOW_IMPLICIT);
+            }
+        }, 200);
+
+    }
 
     @Override
     protected void onResume() {
